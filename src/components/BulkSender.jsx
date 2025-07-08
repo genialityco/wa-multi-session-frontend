@@ -13,7 +13,9 @@ import { showNotification } from "@mantine/notifications";
 import * as XLSX from "xlsx";
 import axios from "axios";
 
-const BACKEND_URL = "http://localhost:3000";
+// const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL ="https://apiwhatsapp.geniality.com.co";
+// const BACKEND_URL = "http://64.23.199.147:3000";
 
 function downloadTemplate() {
   const ws = XLSX.utils.json_to_sheet([
