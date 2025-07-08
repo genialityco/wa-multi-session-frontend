@@ -7,8 +7,8 @@ import SendMessageForm from "./components/SendMessageForm";
 import BulkSender from "./components/BulkSender";
 
 // const BACKEND_URL = "http://localhost:3000";
-// const BACKEND_URL ="https://apiwhatsapp.geniality.com.co";
-const BACKEND_URL = "http://64.23.199.147:3000";
+const BACKEND_URL ="https://apiwhatsapp.geniality.com.co";
+// const BACKEND_URL = "http://64.23.199.147:3000";
 
 
 function App() {
