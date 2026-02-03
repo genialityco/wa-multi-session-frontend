@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const API_URL = "http://localhost:3000";
-const API_URL = "https://king-prawn-app-iwexx.ondigitalocean.app";
+const API_URL = "https://apiwhatsapp.geniality.com.co";
 // const API_URL = "http://64.23.199.147:3000";
 
 const api = axios.create({
