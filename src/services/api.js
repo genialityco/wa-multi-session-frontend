@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000";
-// const API_URL = "https://apiwhatsapp.geniality.com.co";
+// const API_URL = "http://localhost:3000";
+const API_URL = "https://king-prawn-app-iwexx.ondigitalocean.app";
 // const API_URL = "http://64.23.199.147:3000";
 
 const api = axios.create({
@@ -23,6 +23,11 @@ export const connectSession = async (clientId) => {
 
 export const sendMessage = async (clientId, number, message) => {
   const response = await api.post('/send', { clientId, phone: number, message });
+  return response.data;
+};
+
+export const logoutSession = async (clientId) => {
+  const response = await api.post('/logout', { clientId });
   return response.data;
 };
 

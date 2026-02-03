@@ -18,7 +18,7 @@ import {
 } from "@mantine/core";
 import { IconPlugConnected, IconTrash, IconRefresh, IconPlus, IconDeviceMobile } from "@tabler/icons-react";
 import { QRCodeCanvas } from "qrcode.react";
-import { getSessions, connectSession } from "../services/api";
+import { getSessions, connectSession, logoutSession } from "../services/api";
 import { useSocket } from "../hooks/useSocket";
 import { notifications } from '@mantine/notifications';
 
@@ -71,13 +71,23 @@ export default function SessionsPage() {
     }
   };
 
-  const handleLogout = () => {
+
+
+  // ... (inside component)
+
+  const handleLogout = async () => {
+    if (activeSession) {
+        try {
+            await logoutSession(activeSession);
+        } catch (error) {
+            console.error("Error closing session on backend", error);
+        }
+    }
     setActiveSession("");
     localStorage.removeItem("clientId");
-    // Optionally call backend logout if API exists, but usually just disconnecting socket is enough for UI reset
     notifications.show({
         title: 'Desconectado',
-        message: 'Has cerrado la sesión actual en el visor',
+        message: 'Has cerrado la sesión',
         color: 'yellow'
     });
   };
