@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AppShell, Burger, Group, NavLink, Text, ThemeIcon, rem, Box, useMantineColorScheme, ActionIcon } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconBrandWhatsapp, IconMessage, IconUsers, IconMoon, IconSun } from '@tabler/icons-react';
+import { IconBrandWhatsapp, IconMessage, IconUsers, IconMoon, IconSun, IconSettings } from '@tabler/icons-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function DashboardLayout({ children }) {
@@ -13,6 +13,7 @@ export default function DashboardLayout({ children }) {
   const data = [
     { icon: IconBrandWhatsapp, label: 'Sesiones', to: '/' },
     { icon: IconMessage, label: 'Mensajería', to: '/messages' },
+    { icon: IconSettings, label: 'Cuentas', to: '/accounts' },
     // { icon: IconUsers, label: 'Contactos', to: '/contacts' }, // Future feature
   ];
 

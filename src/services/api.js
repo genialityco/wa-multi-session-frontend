@@ -39,5 +39,25 @@ export const sendBulkMessages = async (clientId, numbers, message, delay = 1000)
   // Actually, the original BulkSender likely did a loop. Let's keep it simple here.
 };
 
+// Account management
+export const registerAccount = async (accountId, phoneNumberId, accessToken) => {
+  const response = await api.post('/account/register', { 
+    accountId, 
+    phoneNumberId, 
+    accessToken 
+  });
+  return response.data;
+};
+
+export const removeAccount = async (accountId) => {
+  const response = await api.post('/account/remove', { accountId });
+  return response.data;
+};
+
+export const listAccounts = async () => {
+  const response = await api.get('/accounts');
+  return response.data;
+};
+
 export const BACKEND_URL = API_URL; // Export for socket connection
 export default api;
